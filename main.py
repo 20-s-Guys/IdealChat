@@ -1,28 +1,42 @@
 import sys
 from PyQt5.QtWidgets import *
-from PyQt5 import uic   # ui 파일을 사용하기 위한 모듈 import
+from PyQt5 import uic
 
-import signUp_Window
-#UI파일 연결 코드
-UI_class = uic.loadUiType("ui//main.ui")[0]
+form_mainwindow = uic.loadUiType("ui//main.ui")[0]
+form_signupwindow = uic.loadUiType("ui//signup.ui")[0]
+form_signinwindow = uic.loadUiType("ui//signin.ui")[0]
 
-class WindowClass(QMainWindow, UI_class) :
-    def __init__(self) :
+#로그인
+class SignInWindow(QMainWindow, form_signinwindow):
+    def __init__(self, parent=None):
+        super(SignInWindow, self).__init__(parent)
+        self.setupUi(self)
+
+#회원가입
+class SignUpWindow(QMainWindow, form_signupwindow):
+    def __init__(self, parent=None):
+        super(SignUpWindow, self).__init__(parent)
+        self.setupUi(self)
+
+#메인
+class MainWindow(QMainWindow, form_mainwindow):
+    def __init__(self):
         super().__init__()
         self.setupUi(self)
-        self.show()
-        self.signup.clicked.connect(self.btnSecond)
-    
-    def btnCLick(self):
-        print("버튼이 클릭되었습니다.")
+        self.signup.clicked.connect(self.SignUpBctn_clicked)
+        self.signin.clicked.connect(self.SignIpBtn_clicked)
         
-    def btnSecond(self):
-        self.hide()
-        self.second = signUp_Window.signupwindow()
-        self.show()
+    # 버튼이 클릭될 때 새로운 창 생성
+    def SignUpBctn_clicked(self):
+        self.SignUpWindow = SignUpWindow(self)
+        self.SignUpWindow.show()
+        
+    def SignIpBtn_clicked(self):
+        self.SignInWindow = SignInWindow(self)
+        self.SignInWindow.show()
 
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    myWindow = WindowClass()
-    myWindow.show()
-    app.exec_()
+
+app = QApplication(sys.argv)
+MainWindow = MainWindow()
+MainWindow.show()
+app.exec_()
