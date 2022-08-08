@@ -89,7 +89,7 @@
      <string>닉네임</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="enterpw_2">
+   <widget class="QLineEdit" name="nickname">
     <property name="geometry">
      <rect>
       <x>80</x>
