@@ -6,7 +6,6 @@ from signin import SignInWindow
 
 form_mainwindow = uic.loadUiType("ui//main.ui")[0]
 
-#메인
 class MainWindow(QMainWindow, form_mainwindow):
     def __init__(self):
         super().__init__()
