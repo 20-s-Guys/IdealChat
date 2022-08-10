@@ -6,15 +6,9 @@ form_mainwindow = uic.loadUiType("ui//main.ui")[0]
 form_signupwindow = uic.loadUiType("ui//signup.ui")[0]
 form_signinwindow = uic.loadUiType("ui//signin.ui")[0]
 
-#로그인
-class SignInWindow(QMainWindow, form_signinwindow):
-    def __init__(self, parent=None):
-        super(SignInWindow, self).__init__(parent)
-        self.setupUi(self)
-
 #회원가입
 class SignUpWindow(QMainWindow, form_signupwindow):
-    def __init__(self, parent=None):
+    def __init__(self, parent=None):    
         super(SignUpWindow, self).__init__(parent)
         self.setupUi(self)
 
