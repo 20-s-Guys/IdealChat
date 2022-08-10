@@ -30,7 +30,7 @@ class UserBase(BaseModel):
 
 
 class UserCreate(UserBase):
-    password: str
+    u_password: str
 
 
 class User(UserBase):
