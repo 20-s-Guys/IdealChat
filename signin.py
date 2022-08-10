@@ -6,11 +6,8 @@ form_signinwindow = uic.loadUiType("ui//signin.ui")[0]
 
 #로그인
 class SignInWindow(QMainWindow, form_signinwindow):
-    def __init__(self, parent=None):
-        super(SignInWindow, self).__init__(parent)
+    def __init__(self):
+        super(SignInWindow, self).__init__()
         self.setupUi(self)
+        self.show()
 
-app = QApplication(sys.argv)
-MainWindow = SignInWindow()
-MainWindow.show()
-app.exec_()
