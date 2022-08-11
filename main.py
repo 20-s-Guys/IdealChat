@@ -19,7 +19,10 @@ class MainWindow(QMainWindow, form_mainwindow):
         
     # 버튼이 클릭될 때 새로운 창 생성
     def SignUpBtn_clicked(self):
+        self.hide()
         self.SignUpWindow = SignUpWindow()
+        self.SignUpWindow.exec()
+        self.show()
         
     def SignIpBtn_clicked(self):
         self.SignInWindow = SignInWindow()

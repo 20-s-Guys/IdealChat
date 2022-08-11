@@ -1,12 +1,12 @@
 import sys
 from PyQt5.QtWidgets import *
 from PyQt5 import uic
-form_signupwindow = uic.loadUiType("ui//signup.ui")[0]
+form_signupwindow = uic.loadUiType("ui//SignUpDialog.ui")[0]
 
 #MySQL
 
 #회원가입
-class SignUpWindow(QMainWindow, form_signupwindow):
+class SignUpWindow(QDialog, QWidget, form_signupwindow):
     def __init__(self):    
         super(SignUpWindow, self).__init__()
         self.initUI()

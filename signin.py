@@ -32,6 +32,7 @@ class SignInWindow(QMainWindow, form_signinwindow):
         if(LoginStatus == 1):
             QMessageBox.about(self,"Successed","로그인 성공!")
             self.MyPageWindow = MyPageWindow()
+            self.close()
         else:
             QMessageBox.about(self,"Failed","로그인 실패!")
         
