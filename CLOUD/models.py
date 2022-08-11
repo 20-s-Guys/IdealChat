@@ -1,4 +1,7 @@
-from sqlite3 import Timestamp
+
+
+#First release model is defined at one File, But Lator I want to split these things. 
+
 from sqlalchemy import Boolean, Column, ForeignKey, Integer, String , TIMESTAMP
 from sqlalchemy import func #func.now()를 위함
 from sqlalchemy.orm import relationship
@@ -38,11 +41,10 @@ class TEMP(Base):
 
     room_index = Column(Integer, primary_key=True, index=True)
     r_friends = Column(String(999), nullable = True)
-    description = Column(String(100), index=True , nullable = True)
-    owner_id = Column(Integer, ForeignKey("user.id"))
+    room_name = Column(String(99), nullable = False)
+    create_at = Column(TIMESTAMP, default = func.now())
 
     #relationship
-    owner = relationship("user", back_populates="temp")
     items = relationship("chat", back_populates="temp", nullable = True)
 
 
