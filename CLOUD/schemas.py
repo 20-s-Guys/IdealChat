@@ -8,16 +8,16 @@
 from pydantic import BaseModel
 from typing import Optional
 
-class ItemBase(BaseModel):
+class TEMP_Base(BaseModel):
     title: str
     description: str | None = None
 
 
-class ItemCreate(ItemBase):
+class TEMP_Create(TEMP_Base):
     pass
 
 
-class Item(ItemBase):
+class TEMP(TEMP_Base):
     id: Optional[str]
     owner_id: int
 
@@ -25,18 +25,18 @@ class Item(ItemBase):
         orm_mode = True
 
 
-class UserBase(BaseModel):
+class USER_Base(BaseModel):
     email: str
 
 
-class UserCreate(UserBase):
+class USER_Create(USER_Base):
     u_password: str
 
 
-class User(UserBase):
+class USER(USER_Base):
     id: int
     is_active: bool
-    items: list[Item] = []
+    items: list[TEMP] = []
 
     class Config:
         orm_mode = True
