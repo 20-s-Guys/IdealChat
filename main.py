@@ -15,7 +15,7 @@ class MainWindow(QMainWindow, form_mainwindow):
     def initUI(self):
         self.setupUi(self)
         self.signup.clicked.connect(self.SignUpBtn_clicked)
-        self.signin.clicked.connect(self.SignIpBtn_clicked)
+        self.signin.clicked.connect(self.SignInBtn_clicked)
         
     # 버튼이 클릭될 때 새로운 창 생성
     def SignUpBtn_clicked(self):
@@ -24,8 +24,18 @@ class MainWindow(QMainWindow, form_mainwindow):
         self.SignUpWindow.exec()
         self.show()
         
-    def SignIpBtn_clicked(self):
+    def SignInBtn_clicked(self):
+        self.hide()
         self.SignInWindow = SignInWindow()
+        self.SignInWindow.exec()
+        boolLoginSuccess = self.SignInWindow.LoginStatus
+        if(boolLoginSuccess == 1):
+            self.SignInWindow.MyPageWindow.exec()
+            self.show()
+        else:
+            self.show()
+            
+            
 
 
 app = QApplication(sys.argv)
