@@ -6,15 +6,19 @@ form_changenickwindow = uic.loadUiType("ui//changenickname.ui")[0]
 #MySQL
 
 #회원가입
-class ChangeNickWindow(QDialog, QWidget, form_changenickwindow):
+class ChangeMyNickWindow(QDialog, QWidget, form_changenickwindow):
     def __init__(self):    
-        super(ChangeNickWindow, self).__init__()
+        super(ChangeMyNickWindow, self).__init__()
         self.initUI()
         self.show()
         
     def initUI(self):
+        self.setupUi(self)
         self.ChangeButton.clicked.connect(self.ChangeMyNickName)
         
     def ChangeMyNickName(self):
-        StrNickname = self.ChangeNickNameLineEdit.text()
+        ChangeMyNickWindow.EditNickName = self.ChangeNickNameLineEdit.text()
         #db에 넘김
+        QMessageBox.about(self,"Successed","닉네임이 변경되었습니다!")
+        self.close()
+        

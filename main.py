@@ -30,9 +30,11 @@ class MainWindow(QMainWindow, form_mainwindow):
         self.SignInWindow.exec()
         boolLoginSuccess = self.SignInWindow.LoginStatus
         if(boolLoginSuccess == 1):
+            #마이페이지가 닫히면 메인 창이 다시 보임.
             self.SignInWindow.MyPageWindow.exec()
             self.show()
         else:
+            #로그인 닫히면 메인 창이 다시 보임.
             self.show()
             
             
