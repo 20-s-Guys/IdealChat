@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>마이페이지</string>
   </property>
   <widget class="QLabel" name="FriendListLabel">
    <property name="geometry">
@@ -26,7 +26,7 @@
     <string>친구 목록</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="DeleteFriend">
+  <widget class="QPushButton" name="DelFriendButton">
    <property name="geometry">
     <rect>
      <x>140</x>
@@ -78,7 +78,7 @@
     <string>닉네임 변경</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="AddFriend">
+  <widget class="QPushButton" name="AddFriendButton">
    <property name="geometry">
     <rect>
      <x>30</x>

@@ -2,6 +2,8 @@ import sys
 from PyQt5.QtWidgets import *
 from PyQt5 import uic
 from changenickname import ChangeMyNickWindow
+from AddFriend import AddFriendWindow
+from DelFriend import DelFriendWindow
 from time import sleep
 from PyQt5.QtCore import *
 
@@ -42,6 +44,13 @@ class MyPageWindow(QDialog, QWidget, QThread, form_mypagewindow):
         self.LoadMyNickName()
         #self.AddFriend.clicked.connect()
         self.EditNicknameButton.clicked.connect(self.ChangeMyNickName)
+        self.AddFriendButton.clicked.connect(self.AddFriend)
+        self.DelFriendButton.clicked.connect(self.DelFriend)
+        
+    def DelFriend(self):
+        self.DelFriendWindow = DelFriendWindow()
+    def AddFriend(self):
+        self.AddFriendWindow = AddFriendWindow()
         
     def LoadFriendList(self):
         x = LoadFriendList(self)

@@ -63,7 +63,7 @@
      <string>친구 목록</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="AddFriend">
+   <widget class="QPushButton" name="AddFriendButton">
     <property name="geometry">
      <rect>
       <x>20</x>
