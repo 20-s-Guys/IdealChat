@@ -12,7 +12,7 @@ class AddFriendWindow(QDialog, QWidget, Form_AddFriendWindow):
         
     def initUI(self):
         self.setupUi(self)
-        self.DelFriendButton.clicked.connect(self.AddFriend)
+        self.AddFriendButton.clicked.connect(self.AddFriend)
     
     def AddFriend(self):
         id = self.EnterFriendIdEdit.text()
